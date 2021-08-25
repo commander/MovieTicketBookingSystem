@@ -22,7 +22,7 @@ https://localhost:51443/api/v1/Cities/{cityName}/Movies
 
 https://localhost:51443/api/v1/Movies/{movieName}/Cinemas/{cinema}/Shows
 
-# Architecure
+# Architecture
 
 ![Components](/Architecture/Components.png)
 
