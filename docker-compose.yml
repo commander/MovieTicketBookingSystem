@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  db:
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=1VeryLong^Password1
+  mtbs.api:
+    image: ${DOCKER_REGISTRY-}mtbsapi
+    build:
+      context: .
+      dockerfile: Mtbs.Api/Dockerfile
+    depends_on:
+      - db
