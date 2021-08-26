@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Mtbs.DataAccess;
 using Mtbs.Models.Authentication;
+using System;
 using System.Text;
 
 namespace Mtbs.Api
@@ -13,10 +14,11 @@ namespace Mtbs.Api
     {
         public static void ConfigureAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
-            // For Identity  
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<MtbsContext>()
-                .AddDefaultTokenProviders();
+
+                // For Identity  
+                services.AddIdentity<ApplicationUser, IdentityRole>()
+                    .AddEntityFrameworkStores<MtbsContext>()
+                    .AddDefaultTokenProviders();
 
             // Adding Authentication  
             services.AddAuthentication(options =>

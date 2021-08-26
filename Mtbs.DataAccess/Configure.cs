@@ -12,7 +12,8 @@ namespace Mtbs.DataAccess
 
             services
                 .AddScoped<IMoviesRepository, MoviesRepository>()
-                .AddScoped<ICitiesRepository, CitiesRepository>();
+                .AddScoped<ICitiesRepository, CitiesRepository>()
+                .AddScoped<IBookingsRepository, BookingsRepository>();
         }
     }
 }

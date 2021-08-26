@@ -7,6 +7,6 @@ namespace Mtbs.DataAccess
 {
     public interface IBookingsRepository
     {
-        Task<Guid> BookShow(int showId, string userId, DateTime bookingTime);
+        Task<Guid> BookShow(int showId, string userId, int numberOfSeats, DateTime bookingTime);
     }
 }

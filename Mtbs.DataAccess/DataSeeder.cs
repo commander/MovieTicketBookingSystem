@@ -46,18 +46,13 @@ namespace Mtbs.DataAccess
             dbContext.Movies.Add(shershah);
             dbContext.Movies.Add(bhuj);
             dbContext.Movies.Add(missionMangal);
-
+            dbContext.SaveChanges();
 
             var inox = new Cinema
             {
                 City = bangalore,
                 Name = "Inox",
                 TotalSeats = 100,
-                Movies = new List<Movie>
-                {
-                    shershah,
-                    bhuj,
-                }
             };
 
             var pvr = new Cinema
@@ -65,11 +60,6 @@ namespace Mtbs.DataAccess
                 City = mumbai,
                 Name = "PVR",
                 TotalSeats = 200,
-                Movies = new List<Movie>
-                {
-                    missionMangal,
-                    bhuj
-                }
             };
 
             var gopalan = new Cinema
@@ -77,21 +67,23 @@ namespace Mtbs.DataAccess
                 City = bangalore,
                 Name = "Gopalan",
                 TotalSeats = 200,
-                Movies = new List<Movie>
-                {
-                    missionMangal,
-                    shershah
-                }
             };
 
             dbContext.Cinemas.Add(inox);
             dbContext.Cinemas.Add(pvr);
             dbContext.Cinemas.Add(gopalan);
+            dbContext.SaveChanges();
 
+            pvr.Movies.Add(bhuj);
+            pvr.Movies.Add(missionMangal);
+            inox.Movies.Add(shershah);
+            inox.Movies.Add(bhuj);
+            dbContext.SaveChanges();
+            
             var movieShow1 = new MovieShow
             {
-                Movie = missionMangal,
-                Cinema = pvr,
+                MovieId = missionMangal.Id,
+                CinemaId = pvr.Id,
                 Date = new DateTime(2021, 8, 24),
                 SeatsAvailable = 200,
                 StartTime = new DateTime(2021, 8, 24, 15, 15, 0, DateTimeKind.Local),
@@ -99,8 +91,8 @@ namespace Mtbs.DataAccess
 
             var movieShow2 = new MovieShow
             {
-                Movie = missionMangal,
-                Cinema = pvr,
+                MovieId = missionMangal.Id,
+                CinemaId = pvr.Id,
                 Date = new DateTime(2021, 8, 24),
                 SeatsAvailable = 200,
                 StartTime = new DateTime(2021, 8, 24, 18, 15, 0, DateTimeKind.Local),
@@ -108,7 +100,7 @@ namespace Mtbs.DataAccess
 
             var movieShow3 = new MovieShow
             {
-                Movie = missionMangal,
+                MovieId = missionMangal.Id,
                 Cinema = pvr,
                 Date = new DateTime(2021, 8, 25),
                 SeatsAvailable = 200,
@@ -117,8 +109,8 @@ namespace Mtbs.DataAccess
 
             var movieShow4 = new MovieShow
             {
-                Movie = shershah,
-                Cinema = inox,
+                MovieId = shershah.Id,
+                CinemaId = inox.Id,
                 Date = new DateTime(2021, 8, 24),
                 SeatsAvailable = 100,
                 StartTime = new DateTime(2021, 8, 24, 15, 15, 0, DateTimeKind.Local),
@@ -126,8 +118,8 @@ namespace Mtbs.DataAccess
 
             var movieShow5 = new MovieShow
             {
-                Movie = shershah,
-                Cinema = inox,
+                MovieId = shershah.Id,
+                CinemaId = inox.Id,
                 Date = new DateTime(2021, 8, 24),
                 SeatsAvailable = 100,
                 StartTime = new DateTime(2021, 8, 24, 18, 15, 0, DateTimeKind.Local),
@@ -135,8 +127,8 @@ namespace Mtbs.DataAccess
 
             var movieShow6 = new MovieShow
             {
-                Movie = shershah,
-                Cinema = inox,
+                MovieId = shershah.Id,
+                CinemaId = inox.Id,
                 Date = new DateTime(2021, 8, 25),
                 SeatsAvailable = 100,
                 StartTime = new DateTime(2021, 8, 24, 15, 15, 0, DateTimeKind.Local),

@@ -8,6 +8,7 @@ namespace Mtbs.Core
         {
             services.AddTransient<ISearchService, SearchService>();
             services.AddTransient<IAuthService, AuthService>();
+            services.AddTransient<IBookingsService, BookingsService>();
         }
     }
 }

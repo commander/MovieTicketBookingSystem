@@ -26,7 +26,7 @@ https://localhost:51443/api/v1/Movies/{movieName}/Cinemas/{cinema}/Shows
 
 ![Components](/Architecture/Components.png)
 
-The System has three main components. Accounts service, Bookings service and Core service
+The System has two main components. Accounts service and Core service.
 
 **Core Service:** supports the functionality to serach movies and view avaialability of the shows, Add new movies, Cinemas, shows, Booking Tickets etc.
 

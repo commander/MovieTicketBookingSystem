@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Mtbs.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class AccountController : ControllerBase
     {

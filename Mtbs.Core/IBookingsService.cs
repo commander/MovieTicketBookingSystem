@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Mtbs.Core
 {
-    public interface IBookingService
+    public interface IBookingsService
     {
         // return booking reference id
-        Task<int> BookShow(string cinema, string movieTitle, int showId);
+        Task<Guid> BookShow(int showId, string userId, int numberOfSeats);
     }
 }

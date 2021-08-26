@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Mtbs.DataAccess;
 
 namespace Mtbs.Api.Migrations
 {
     [DbContext(typeof(MtbsContext))]
-    partial class MtbsContextModelSnapshot : ModelSnapshot
+    [Migration("20210826181612_Bookings")]
+    partial class Bookings
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
