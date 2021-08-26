@@ -28,8 +28,8 @@ https://localhost:51443/api/v1/Movies/{movieName}/Cinemas/{cinema}/Shows
 
 The System has three main components. Accounts service, Bookings service and Core service
 
-Core Service: supports the functionality to serach movies and view avaialability of the shows, Add new movies, Cinemas, shows etc.
-Accounts Service: supports the functionality to for admin and user to register, login, reset password etc.
-Booking Service: supports the functionality to book tickets for movies shows and retrieve the bookings etc.
+**Core Service:** supports the functionality to serach movies and view avaialability of the shows, Add new movies, Cinemas, shows, Booking Tickets etc.
+
+**Accounts Service:** supports the functionality to for admin and user to register, login, reset password etc.
 
 Each service is hosted under their own docker containers, with separate DBs for them.
