@@ -32,6 +32,7 @@ namespace Mtbs.Api.Controllers
             string userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             Guid bookingId = await _bookingsService.BookShow(model.ShowId, userId, model.NumberOfSeats);
 
+            _logger.LogInformation("Created Booking {@bookingId} for user {@userId}", bookingId, userId);
             return Ok(bookingId);
         }
     }

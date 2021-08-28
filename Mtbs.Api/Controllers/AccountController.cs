@@ -66,6 +66,8 @@ namespace Mtbs.Api.Controllers
                     expiration = token.ValidTo
                 });
             }
+
+            _logger.LogDebug("User with username {@model.UserName} not found.", model.UserName);
             return Unauthorized();
         }
 
