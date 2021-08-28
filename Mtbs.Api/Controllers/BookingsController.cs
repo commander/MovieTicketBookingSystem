@@ -32,8 +32,26 @@ namespace Mtbs.Api.Controllers
             string userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             Guid bookingId = await _bookingsService.BookShow(model.ShowId, userId, model.NumberOfSeats);
 
-            _logger.LogInformation("Created Booking {@bookingId} for user {@userId}", bookingId, userId);
-            return Ok(bookingId);
+            if(bookingId == Guid.Empty)
+            {
+                _logger.LogError("Could not book ticket for user {@userId}, show {@showId}", userId, model.ShowId);
+                return Ok(new BookingResponse
+                {
+                    Message = "Show is full. Please try another show.",
+                    Status = BookingStatus.ShowFull.ToString()
+                });
+            }
+            else
+            {
+                _logger.LogInformation("Created Booking {@bookingId} for user {@userId}", bookingId, userId);
+                return Ok(new BookingResponse 
+                {
+                    BookingId = bookingId,
+                    Status = BookingStatus.Succeeded.ToString(),
+                    Message = "Success"
+                });
+            }
+            
         }
     }
 }
