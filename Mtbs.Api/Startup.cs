@@ -23,7 +23,7 @@ namespace Mtbs.Api
         {
 
             services.AddControllers();
-            
+            services.AddHealthChecks();
             Mtbs.DataAccess.Configure.ConfigureServices(services, Configuration.GetConnectionString("MtbsContext"));
             Mtbs.Core.Configure.ConfigureServices(services);
             
@@ -45,6 +45,7 @@ namespace Mtbs.Api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MovieTicketBookingSystem v1"));
             }
 
+            app.UseHealthChecks("/api/v1/health");
             app.UseHttpsRedirection();
 
             app.UseRouting();

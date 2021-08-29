@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Architecture/Components2.drawio
+/MTBS-queries.sql
