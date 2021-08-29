@@ -2,9 +2,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Serilog;
-using Serilog.Formatting.Compact;
 using System;
-using System.Reflection;
 
 namespace Mtbs.Api
 {
@@ -18,9 +16,6 @@ namespace Mtbs.Api
                 .Build();
             Log.Logger = new LoggerConfiguration()
                 .ReadFrom.Configuration(config)
-                //.WriteTo.File(new CompactJsonFormatter(), @"logs/log.txt",
-                //    restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Information,
-                //    rollingInterval: RollingInterval.Day)
                 .CreateLogger();
             try
             {

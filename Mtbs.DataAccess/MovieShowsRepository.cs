@@ -1,8 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Mtbs.Models;
-using System.Collections.Generic;
+﻿using Mtbs.Models;
 using System.Threading.Tasks;
-using System.Linq;
 
 namespace Mtbs.DataAccess
 {

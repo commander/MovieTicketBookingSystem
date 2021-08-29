@@ -5,7 +5,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Mtbs.DataAccess;
 using Mtbs.Models.Authentication;
-using System;
 using System.Text;
 
 namespace Mtbs.Api
